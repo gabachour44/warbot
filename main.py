@@ -389,4 +389,4 @@ async def on_message(message):
 
 
 #keep_alive()
-client.run("ODI1OTM1NjU1Mjg4MzA3NzIy.YGFKhQ.SFbuBUn7_OHXNop6pTj5agUJtmI")
+client.run("""TOKEN HERE""")

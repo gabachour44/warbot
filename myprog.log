@@ -611,3 +611,267 @@ DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 6.
 DEBUG:discord.client:Dispatching event socket_raw_receive
 DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
 DEBUG:discord.client:Dispatching event socket_response
+INFO:root:So should this
+DEBUG:asyncio:Using selector: SelectSelector
+WARNING:discord.client:PyNaCl is not installed, voice will NOT be supported
+DEBUG:discord.client:on_ready has successfully been registered as an event
+DEBUG:discord.client:on_message has successfully been registered as an event
+INFO:discord.client:logging in using static token
+DEBUG:discord.http:GET https://discord.com/api/v7/users/@me with None has returned 200
+DEBUG:discord.http:GET https://discord.com/api/v7/users/@me has received {'id': '825935655288307722', 'username': 'Warbot-dev', 'avatar': None, 'discriminator': '0733', 'public_flags': 0, 'flags': 0, 'bot': True, 'locale': 'en-US', 'mfa_enabled': True, 'email': None, 'verified': True}
+DEBUG:discord.http:GET https://discord.com/api/v7/gateway with None has returned 200
+DEBUG:discord.http:GET https://discord.com/api/v7/gateway has received {'url': 'wss://gateway.discord.gg'}
+DEBUG:discord.gateway:Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 10, 'd': {'heartbeat_interval': 41250, '_trace': ['["gateway-prd-main-v55c",{"micros":0.0}]']}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_send
+DEBUG:discord.client:Dispatching event socket_raw_send
+INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'READY', 's': 1, 'op': 0, 'd': {'v': 6, 'user_settings': {}, 'user': {'verified': True, 'username': 'Warbot-dev', 'mfa_enabled': True, 'id': '825935655288307722', 'flags': 0, 'email': None, 'discriminator': '0733', 'bot': True, 'avatar': None}, 'session_id': 'caf5a614b3ea8e2a9f06d2a008febc85', 'relationships': [], 'private_channels': [], 'presences': [], 'guilds': [{'unavailable': True, 'id': '706894263807377558'}, {'unavailable': True, 'id': '822668695230218270'}], 'guild_join_requests': [], 'geo_ordered_rtc_regions': ['us-central', 'us-east', 'us-south', 'us-west', 'europe'], 'application': {'id': '825935655288307722', 'flags': 40960}, '_trace': ['["gateway-prd-main-v55c",{"micros":189037,"calls":["discord-sessions-prd-2-150",{"micros":187013,"calls":["start_session",{"micros":171961,"calls":["api-prd-main-5sk7",{"micros":76246,"calls":["get_user",{"micros":4812},"add_authorized_ip",{"micros":1462},"get_guilds",{"micros":7822},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}]']}}
+DEBUG:discord.client:Dispatching event socket_response
+INFO:discord.gateway:Shard ID None has connected to Gateway: ["gateway-prd-main-v55c",{"micros":189037,"calls":["discord-sessions-prd-2-150",{"micros":187013,"calls":["start_session",{"micros":171961,"calls":["api-prd-main-5sk7",{"micros":76246,"calls":["get_user",{"micros":4812},"add_authorized_ip",{"micros":1462},"get_guilds",{"micros":7822},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: caf5a614b3ea8e2a9f06d2a008febc85).
+DEBUG:discord.client:Dispatching event connect
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'GUILD_CREATE', 's': 2, 'op': 0, 'd': {'public_updates_channel_id': None, 'channels': [{'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Text Channels', 'id': '706894263807377559'}, {'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Voice Channels', 'id': '706894263807377560'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '706894263807377559', 'name': 'general', 'last_message_id': '826286014623776819', 'id': '706894263807377561'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'position': 0, 'permission_overwrites': [], 'parent_id': '706894263807377560', 'name': 'Urban Terror', 'id': '706894263807377562', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'position': 1, 'permission_overwrites': [], 'parent_id': '706894263807377560', 'name': 'General', 'id': '719250287629434920', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'position': 2, 'permission_overwrites': [], 'parent_id': '706894263807377560', 'name': 'Autres jeux', 'id': '719251492099457054', 'bitrate': 64000}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [{'type': 'role', 'id': '706894263807377558', 'deny_new': '1024', 'deny': 1024, 'allow_new': '0', 'allow': 0}, {'type': 'role', 'id': '719250707265355973', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}], 'parent_id': '706894263807377559', 'name': 'privé', 'last_message_id': '818941820381298688', 'id': '726529437952114771'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [{'type': 'role', 'id': '706894263807377558', 'deny_new': '1024', 'deny': 1024, 'allow_new': '0', 'allow': 0}, {'type': 'role', 'id': '719250707265355973', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'role', 'id': '726530613523382308', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}], 'parent_id': '706894263807377559', 'name': 'friends', 'last_message_id': '786715381262843956', 'id': '726530583387439136'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 3, 'permission_overwrites': [{'type': 'member', 'id': '117620974806892549', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'member', 'id': '383732237222543392', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'role', 'id': '706894263807377558', 'deny_new': '0', 'deny': 0, 'allow_new': '0', 'allow': 0}, {'type': 'role', 'id': '824128041197633537', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}], 'parent_id': '706894263807377559', 'nsfw': False, 'name': 'pcw', 'last_message_id': '824783233626406943', 'id': '823781689355534367'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 4, 'permission_overwrites': [{'type': 'role', 'id': '706894263807377558', 'deny_new': '1024', 'deny': 1024, 'allow_new': '0', 'allow': 0}, {'type': 'role', 'id': '826286014208802847', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}], 'parent_id': '706894263807377559', 'nsfw': False, 'name': 'warbot-dev', 'last_message_id': '830893778923290686', 'id': '825949890584379394'}], 'discovery_splash': None, 'explicit_content_filter': 0, 'max_video_channel_users': 25, 'members': [{'user': {'username': 'Biddle', 'public_flags': 128, 'id': '117620974806892549', 'discriminator': '1337', 'avatar': 'ca510da0d9fade3504ea1397b4aeecf0'}, 'roles': ['719250707265355973'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2020-06-17T19:17:00.865000+00:00', 'is_pending': False, 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': 'Binge&Grab', 'id': '145369721083002880', 'discriminator': '0064', 'avatar': 'f10125f4ab3766feeb21c7c49895a25d'}, 'roles': ['726530613523382308'], 'mute': False, 'joined_at': '2020-10-13T19:24:55.529000+00:00', 'hoisted_role': '726530613523382308', 'deaf': False}, {'user': {'username': 'Sukina', 'id': '146975425812234241', 'discriminator': '0431', 'avatar': '101d9454b72357092d3c0dca86211e7d'}, 'roles': ['719250707265355973'], 'nick': 'Urumi', 'mute': False, 'joined_at': '2020-06-05T19:51:24.288000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': 'st0mP', 'id': '158529423656615938', 'discriminator': '3478', 'avatar': '1f5fbcb949b328766f27c71ee1ab17ff'}, 'roles': [], 'mute': False, 'joined_at': '2021-01-23T20:55:45.917000+00:00', 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'snizz', 'id': '201975321090588673', 'discriminator': '5285', 'avatar': '55ecfcba724318417f73ecc24940f492'}, 'roles': ['726530613523382308'], 'mute': False, 'joined_at': '2020-09-23T18:06:28.850000+00:00', 'hoisted_role': '726530613523382308', 'deaf': False}, {'user': {'username': 'Khalyntz', 'id': '241249763922542592', 'discriminator': '6635', 'avatar': None}, 'roles': ['719250707265355973'], 'nick': 'Calintz', 'mute': False, 'joined_at': '2020-05-09T13:32:10.040000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': 'LIZKo-', 'id': '270177299998048257', 'discriminator': '5615', 'avatar': '40f316cf39bca47044eecf389c8dd533'}, 'roles': ['726530613523382308'], 'mute': False, 'joined_at': '2020-06-05T20:26:27.868000+00:00', 'hoisted_role': '726530613523382308', 'deaf': False}, {'user': {'username': 'bloomy', 'id': '270882243205922816', 'discriminator': '1283', 'avatar': '81040854f8bdeb15182aa81a208cddd0'}, 'roles': ['719250707265355973'], 'mute': False, 'joined_at': '2020-05-09T19:03:23.515000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': 'breey', 'id': '293662664931147776', 'discriminator': '5848', 'avatar': None}, 'roles': ['726530613523382308'], 'mute': False, 'joined_at': '2020-06-18T18:20:35.792000+00:00', 'hoisted_role': '726530613523382308', 'deaf': False}, {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': ['719250707265355973'], 'nick': 'Holycrap', 'mute': False, 'joined_at': '2020-05-04T15:45:25.956000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': '>DN<asian_assassin', 'id': '326789614285357056', 'discriminator': '0878', 'avatar': '66193499ba13291883841d8a6f0dd579'}, 'roles': ['719250707265355973'], 'mute': False, 'joined_at': '2020-10-18T03:54:02.167000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': 'Usopp', 'id': '383732237222543392', 'discriminator': '7658', 'avatar': '6ac5ed9b1909dfc1580f0038b27f6cdf'}, 'roles': ['719250707265355973'], 'mute': False, 'joined_at': '2020-05-04T15:52:25.015000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': '0x00', 'id': '508080527685844997', 'discriminator': '2042', 'avatar': 'b2d930e0390a4c45a8ef47503daea57b'}, 'roles': ['726530613523382308'], 'mute': False, 'joined_at': '2020-06-24T21:57:43.706000+00:00', 'hoisted_role': '726530613523382308', 'deaf': False}, {'user': {'username': 'mikedsp', 'id': '698134115698081922', 'discriminator': '4645', 'avatar': None}, 'roles': ['719250707265355973'], 'nick': 'Egron', 'mute': False, 'joined_at': '2020-05-09T13:58:56.937000+00:00', 'hoisted_role': '719250707265355973', 'deaf': False}, {'user': {'username': 'Snizzbee', 'id': '709134760173371472', 'discriminator': '4366', 'avatar': None}, 'roles': [], 'mute': False, 'joined_at': '2020-09-23T18:05:17.141000+00:00', 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'Dange', 'id': '803607930825998357', 'discriminator': '3428', 'avatar': 'e85d34c9fcba3d0fd4c5cc11c72f467f'}, 'roles': [], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-14T15:07:34.973051+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'warbot', 'id': '822666751187091456', 'discriminator': '2658', 'bot': True, 'avatar': '8c10698955251df1847ea0fe6ba8a4da'}, 'roles': ['824128041197633537'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-24T03:50:36.605915+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'Warbot-dev', 'id': '825935655288307722', 'discriminator': '0733', 'bot': True, 'avatar': None}, 'roles': ['826286014208802847'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-30T02:45:37.492964+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}], 'preferred_locale': 'en-US', 'vanity_url_code': None, 'afk_channel_id': None, 'roles': [{'position': 0, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': '@everyone', 'mentionable': False, 'managed': False, 'id': '706894263807377558', 'hoist': False, 'color': 0}, {'position': 2, 'permissions_new': '8589410039', 'permissions': 2146959095, 'name': 'adn', 'mentionable': True, 'managed': False, 'id': '719250707265355973', 'hoist': True, 'color': 15277667}, {'position': 1, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': 'friend', 'mentionable': True, 'managed': False, 'id': '726530613523382308', 'hoist': True, 'color': 3066993}, {'tags': {'bot_id': '822666751187091456'}, 'position': 1, 'permissions_new': '384064', 'permissions': 384064, 'name': 'Warbot', 'mentionable': False, 'managed': True, 'id': '824128041197633537', 'hoist': False, 'color': 0}, {'tags': {'bot_id': '825935655288307722'}, 'position': 1, 'permissions_new': '384064', 'permissions': 384064, 'name': 'Warbot-dev', 'mentionable': False, 'managed': True, 'id': '826286014208802847', 'hoist': False, 'color': 0}], 'premium_tier': 0, 'member_count': 18, 'nsfw': False, 'name': 'Anal Destruction Nuclear', 'lazy': True, 'banner': None, 'default_message_notifications': 1, 'joined_at': '2021-03-30T02:45:37.492964+00:00', 'presences': [{'user': {'id': '145369721083002880'}, 'status': 'idle', 'game': None, 'client_status': {'desktop': 'idle'}, 'activities': []}, {'user': {'id': '299884015308242954'}, 'status': 'online', 'game': None, 'client_status': {'desktop': 'online'}, 'activities': []}, {'user': {'id': '822666751187091456'}, 'status': 'online', 'game': {'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618155434615}, 'client_status': {'web': 'online'}, 'activities': [{'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618155434615}]}, {'user': {'id': '825935655288307722'}, 'status': 'online', 'game': {'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618199603510}, 'client_status': {'web': 'online'}, 'activities': [{'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618199603510}]}], 'max_members': 250000, 'description': None, 'verification_level': 0, 'emojis': [], 'large': False, 'mfa_level': 0, 'application_id': None, 'icon': 'eefd0803eff303483f6929f76e4625d3', 'guild_hashes': {'version': 1, 'roles': {'omitted': False, 'hash': '0Zub8fyA1i4'}, 'metadata': {'omitted': False, 'hash': 'R+19V9jXDCg'}, 'channels': {'omitted': False, 'hash': 'EJFEHTUL8+E'}}, 'voice_states': [], 'features': [], 'splash': None, 'region': 'us-central', 'premium_subscription_count': 0, 'unavailable': False, 'rules_channel_id': None, 'threads': [], 'system_channel_id': '706894263807377561', 'id': '706894263807377558', 'afk_timeout': 300, 'system_channel_flags': 0, 'owner_id': '299884015308242954'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'GUILD_CREATE', 's': 3, 'op': 0, 'd': {'public_updates_channel_id': None, 'channels': [{'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Text Channels', 'id': '822668695230218271'}, {'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Voice Channels', 'id': '822668695230218272'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [{'type': 'member', 'id': '822666751187091456', 'deny_new': '0', 'deny': 0, 'allow_new': '0', 'allow': 0}, {'type': 'role', 'id': '822668695230218270', 'deny_new': '0', 'deny': 0, 'allow_new': '0', 'allow': 0}], 'parent_id': '822668695230218271', 'nsfw': False, 'name': 'warbot-debugging', 'last_message_id': '826211644895789096', 'id': '822668695230218274'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'position': 0, 'permission_overwrites': [], 'parent_id': '822668695230218272', 'name': 'General', 'id': '822668695716626462', 'bitrate': 64000}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'parent_id': '822668695230218271', 'nsfw': False, 'name': 'suggestions', 'last_message_id': '824372301029834752', 'id': '823721232918773780'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [{'type': 'member', 'id': '117620974806892549', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'member', 'id': '158529423656615938', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'member', 'id': '825935655288307722', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'role', 'id': '825948345214042133', 'deny_new': '0', 'deny': 0, 'allow_new': '1024', 'allow': 1024}, {'type': 'role', 'id': '822668695230218270', 'deny_new': '1024', 'deny': 1024, 'allow_new': '0', 'allow': 0}], 'parent_id': '822668695230218271', 'nsfw': False, 'name': 'warbot-dev', 'last_message_id': '831014121985933332', 'id': '825948618217226310'}], 'discovery_splash': None, 'explicit_content_filter': 0, 'max_video_channel_users': 25, 'members': [{'user': {'username': 'Biddle', 'public_flags': 128, 'id': '117620974806892549', 'discriminator': '1337', 'avatar': 'ca510da0d9fade3504ea1397b4aeecf0'}, 'roles': [], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-23T08:15:24.355200+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'st0mP', 'id': '158529423656615938', 'discriminator': '3478', 'avatar': '1f5fbcb949b328766f27c71ee1ab17ff'}, 'roles': ['824283562119135294'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-22T17:11:11.754093+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'warbot', 'id': '822666751187091456', 'discriminator': '2658', 'bot': True, 'avatar': '8c10698955251df1847ea0fe6ba8a4da'}, 'roles': ['822668848867049543'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-20T03:12:18.048000+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'Warbot-dev', 'id': '825935655288307722', 'discriminator': '0733', 'bot': True, 'avatar': None}, 'roles': ['825948345214042133'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2021-03-29T04:23:50.960728+00:00', 'is_pending': False, 'hoisted_role': None, 'deaf': False}], 'preferred_locale': 'en-US', 'vanity_url_code': None, 'afk_channel_id': None, 'roles': [{'position': 0, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': '@everyone', 'mentionable': False, 'managed': False, 'id': '822668695230218270', 'hoist': False, 'color': 0}, {'tags': {'bot_id': '822666751187091456'}, 'position': 3, 'permissions_new': '515136', 'permissions': 515136, 'name': 'URT-PcwFinder', 'mentionable': False, 'managed': True, 'id': '822668848867049543', 'hoist': False, 'color': 0}, {'position': 2, 'permissions_new': '6546771553', 'permissions': 104320609, 'name': 'stomp', 'mentionable': False, 'managed': False, 'id': '824283562119135294', 'hoist': False, 'color': 0}, {'position': 1, 'permissions_new': '6546769473', 'permissions': 104318529, 'name': 'testrole', 'mentionable': False, 'managed': False, 'id': '824289042006802453', 'hoist': False, 'color': 0}, {'tags': {'bot_id': '825935655288307722'}, 'position': 1, 'permissions_new': '384064', 'permissions': 384064, 'name': 'Warbot-dev', 'mentionable': False, 'managed': True, 'id': '825948345214042133', 'hoist': False, 'color': 0}], 'premium_tier': 0, 'member_count': 5, 'nsfw': False, 'name': 'Warbot support', 'lazy': True, 'banner': None, 'default_message_notifications': 0, 'joined_at': '2021-03-29T04:23:50.960728+00:00', 'presences': [{'user': {'id': '299884015308242954'}, 'status': 'online', 'game': None, 'client_status': {'desktop': 'online'}, 'activities': []}, {'user': {'id': '822666751187091456'}, 'status': 'online', 'game': {'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618155434615}, 'client_status': {'web': 'online'}, 'activities': [{'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618155434615}]}, {'user': {'id': '825935655288307722'}, 'status': 'online', 'game': {'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618199603510}, 'client_status': {'web': 'online'}, 'activities': [{'type': 0, 'name': '!warbot help', 'id': 'ec0b28a579ecb4bd', 'created_at': 1618199603510}]}], 'max_members': 100000, 'description': None, 'verification_level': 0, 'emojis': [], 'large': False, 'mfa_level': 0, 'application_id': None, 'icon': None, 'guild_hashes': {'version': 1, 'roles': {'omitted': False, 'hash': 'hLxtkRAsZhA'}, 'metadata': {'omitted': False, 'hash': 'fQtER0Sra8I'}, 'channels': {'omitted': False, 'hash': '9OQTY+UVa5M'}}, 'voice_states': [], 'features': [], 'splash': None, 'region': 'us-east', 'premium_subscription_count': 0, 'unavailable': False, 'rules_channel_id': None, 'threads': [], 'system_channel_id': '822668695230218274', 'id': '822668695230218270', 'afk_timeout': 300, 'system_channel_flags': 0, 'owner_id': '299884015308242954'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event guild_available
+DEBUG:discord.client:Dispatching event guild_available
+DEBUG:discord.client:Dispatching event ready
+DEBUG:discord.gateway:Sending "{"op":3,"d":{"game":{"type":0,"name":"!warbot help","timestamps":{}},"afk":false,"since":0.0,"status":"online"}}" to change status
+DEBUG:discord.client:Dispatching event socket_raw_send
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 4, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618199748, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 5, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T03:55:50.697000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831014684457959424', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831014728147009556', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!warbot help', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"**Lista dost\u0119pnych polece\u0144**\n\n``!pcw`` _zg\u0142o\u015b pro\u015bb\u0119 o PCW._\n``!avi`` _zg\u0142o\u015b pro\u015bb\u0119 o sparing._\n``!ring`` _zg\u0142o\u015b swoj\u0105 dost\u0119pno\u015b\u0107 jako kombatant._\n``!warbot list`` _wy\u015bwietl zg\u0142oszenia o zapotrzebowanie z ostatniej godziny._\n``!warbot on`` _aktywuj Warbociora._\n``!warbot mute/unmute`` _w\u0142\u0105cz/wy\u0142\u0105cz powiadomienia o zapotrzebowaniu (wci\u0105\u017c jednak mo\u017cna wysy\u0142a\u0107 swoje pro\u015bby)._\n``!warbot about`` _informacje kontaktowe oraz link do zaproszenia bota._"} has returned 200
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 6.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 6.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 6.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 6.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'PRESENCE_UPDATE', 's': 7, 'op': 0, 'd': {'user': {'id': '145369721083002880'}, 'status': 'idle', 'roles': ['726530613523382308'], 'guild_id': '706894263807377558', 'game': None, 'client_status': {'mobile': 'idle', 'desktop': 'idle'}, 'activities': []}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event member_update
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 7.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 8, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618199961, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 9, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T03:59:23.342000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831015576263458816', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831015620044259348', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!pcw 5 ts', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 9.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 9.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'PRESENCE_UPDATE', 's': 10, 'op': 0, 'd': {'user': {'id': '145369721083002880'}, 'status': 'idle', 'roles': ['726530613523382308'], 'guild_id': '706894263807377558', 'game': None, 'client_status': {'desktop': 'idle'}, 'activities': []}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event member_update
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 10.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event member_join
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event member_update
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event member_update
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 14.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 15, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618200124, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 16, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:06.687000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016261365268480', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016305163370506', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!warbot on', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"Cze\u015b\u0107 \ud83d\udc4bJestem Warbot, zapewne pami\u0119tasz mnie z IRCa. B\u0119d\u0119 zg\u0142asza\u0142 tu aktualne zapotrzebowanie w PCW i na ringers\u00f3w z 2 serwer\u00f3w discord, na kt\u00f3rych jestem oraz b\u0119d\u0119 rozpatrza\u0142 Twoje ``!pcw``, ``!avi`` i ``!ring`` pro\u015bby. Na pocz\u0105tek spr\u00f3buj ``!warbot help`` by wy\u015bwietli\u0107 list\u0119 dost\u0119pnych polece\u0144."} has returned 200
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event raw_reaction_add
+DEBUG:discord.client:Dispatching event reaction_add
+DEBUG:discord.http:PUT https://discord.com/api/v7/channels/825948618217226310/messages/831016305163370506/reactions/%F0%9F%91%8C/@me with None has returned 204
+DEBUG:discord.http:A rate limit bucket has been exhausted (bucket: 825948618217226310:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me, retry: 0.25).
+DEBUG:discord.http:PUT https://discord.com/api/v7/channels/825948618217226310/messages/831016305163370506/reactions/%F0%9F%91%8C/@me has received 
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 19, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618200131, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 20, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:12.123000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016284270362624', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016327962820658', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!pcw 5 ts', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"\ud83d\udca5 **PCW** 5 ts **| Contact:** <@299884015308242954>","allowed_mentions":{"replied_user":true,"parse":["everyone","roles"]}} has returned 200
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event raw_reaction_add
+DEBUG:discord.client:Dispatching event reaction_add
+DEBUG:discord.http:PUT https://discord.com/api/v7/channels/825948618217226310/messages/831016327962820658/reactions/%F0%9F%91%8C/@me with None has returned 204
+DEBUG:discord.http:A rate limit bucket has been exhausted (bucket: 825948618217226310:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me, retry: 0.25).
+DEBUG:discord.http:PUT https://discord.com/api/v7/channels/825948618217226310/messages/831016327962820658/reactions/%F0%9F%91%8C/@me has received 
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 23, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618200141, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 23.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 24, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:22.585000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016328193114112', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016371843366913', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!wabot help', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 25, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618200152, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 26, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:34.439000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016377878839296', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016421562646559', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!warbot help', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"**Lista dost\u0119pnych polece\u0144**\n\n``!pcw`` _zg\u0142o\u015b pro\u015bb\u0119 o PCW._\n``!avi`` _zg\u0142o\u015b pro\u015bb\u0119 o sparing._\n``!ring`` _zg\u0142o\u015b swoj\u0105 dost\u0119pno\u015b\u0107 jako kombatant._\n``!warbot list`` _wy\u015bwietl zg\u0142oszenia o zapotrzebowanie z ostatniej godziny._\n``!warbot on`` _aktywuj Warbociora._\n``!warbot mute/unmute`` _w\u0142\u0105cz/wy\u0142\u0105cz powiadomienia o zapotrzebowaniu (wci\u0105\u017c jednak mo\u017cna wysy\u0142a\u0107 swoje pro\u015bby)._\n``!warbot about`` _informacje kontaktowe oraz link do zaproszenia bota._"} has returned 200
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 28, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618200159, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 29, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:40.125000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016401949949952', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016445411721238', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!pcw 5 ts', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"Prosz\u0119 poczeka\u0107 **9min 32s** przed wys\u0142aniem kolejnego ``!pcw`` polecenia."} has returned 200
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 31, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:47.393000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016432220241920', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016475895660564', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!avi', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"\ud83d\udd2b **Ringer avi:** <@299884015308242954>","allowed_mentions":{"replied_user":true,"parse":["everyone","roles"]}} has returned 200
+DEBUG:discord.http:PUT https://discord.com/api/v7/channels/825948618217226310/messages/831016475895660564/reactions/%F0%9F%91%8C/@me with None has returned 204
+DEBUG:discord.http:A rate limit bucket has been exhausted (bucket: 825948618217226310:None:/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me, retry: 0.25).
+DEBUG:discord.http:PUT https://discord.com/api/v7/channels/825948618217226310/messages/831016475895660564/reactions/%F0%9F%91%8C/@me has received 
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event raw_reaction_add
+DEBUG:discord.client:Dispatching event reaction_add
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 34, 'op': 0, 'd': {'user_id': '299884015308242954', 'timestamp': 1618200169, 'member': {'user': {'username': 'Holycrap', 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '825948618217226310', 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event typing
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 35, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-04-12T04:02:54.034000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '831016459952979968', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-03-20T03:11:41.425000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '831016503750950912', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!warbot list', 'channel_id': '825948618217226310', 'author': {'username': 'Holycrap', 'public_flags': 0, 'id': '299884015308242954', 'discriminator': '1833', 'avatar': 'dd38f31435dd884242c9bd89101a137c'}, 'attachments': [], 'guild_id': '822668695230218270'}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event message
+DEBUG:discord.http:POST https://discord.com/api/v7/channels/825948618217226310/messages with {"content":"Nie by\u0142o \u017cadnej pro\u015bby wci\u0105gu ostatniej godziny."} has returned 200
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 36.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 36.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Keeping shard ID None websocket alive with sequence 36.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Received WSMessage(type=<WSMsgType.CLOSE: 8>, data=4003, extra='Not authenticated.')
+INFO:discord.gateway:Websocket closed with 4003, attempting a reconnect.
+INFO:discord.client:Got a request to RESUME the websocket.
+DEBUG:discord.client:Dispatching event disconnect
+DEBUG:discord.http:GET https://discord.com/api/v7/gateway with None has returned 200
+DEBUG:discord.http:GET https://discord.com/api/v7/gateway has received {'url': 'wss://gateway.discord.gg'}
+DEBUG:discord.gateway:Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 10, 'd': {'heartbeat_interval': 41250, '_trace': ['["gateway-prd-main-g5d9",{"micros":0.0}]']}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_send
+DEBUG:discord.client:Dispatching event socket_raw_send
+INFO:discord.gateway:Shard ID None has sent the RESUME payload.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 9, 'd': False}
+DEBUG:discord.client:Dispatching event socket_response
+INFO:discord.gateway:Shard ID None session has been invalidated.
+INFO:discord.client:Got a request to IDENTIFY the websocket.
+DEBUG:discord.client:Dispatching event disconnect
+DEBUG:discord.http:GET https://discord.com/api/v7/gateway with None has returned 200
+DEBUG:discord.http:GET https://discord.com/api/v7/gateway has received {'url': 'wss://gateway.discord.gg'}
+DEBUG:discord.gateway:Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 10, 'd': {'heartbeat_interval': 41250, '_trace': ['["gateway-prd-main-wfh5",{"micros":0.0}]']}}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.client:Dispatching event socket_raw_send
+DEBUG:discord.client:Dispatching event socket_raw_send
+INFO:discord.gateway:Shard ID None has sent the IDENTIFY payload.
+DEBUG:discord.client:Dispatching event socket_raw_receive
+DEBUG:discord.gateway:For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+DEBUG:discord.client:Dispatching event socket_response
+DEBUG:discord.gateway:Received WSMessage(type=<WSMsgType.CLOSE: 8>, data=4004, extra='Authentication failed.')
+INFO:discord.gateway:Websocket closed with 4004, cannot reconnect.
+DEBUG:discord.client:Dispatching event disconnect
+INFO:discord.client:Cleaning up tasks.
+INFO:discord.client:Closing the event loop.
