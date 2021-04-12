@@ -1,1 +1,24 @@
-{"guild_table": {"1": {"id": 822668695230218270, "channel": 825948618217226310, "muted": false, "language": "en_En"}}}
+{"guild_table": {
+"1": {"id": 117622053061787657, "channel":533037794264743946 , "muted": false, "language": "en_En"},
+"2": {"id": 163568375526719489, "channel":829796184633114635 , "muted": false, "language": "en_En"},
+"3": {"id": 270730914588393472, "channel":270730914588393472 , "muted": false, "language": "en_En"},
+"4": {"id": 277549966426112002, "channel":824700233250242620 , "muted": false, "language": "en_En"},
+"5": {"id": 307237240432754701, "channel":826546217106145323 , "muted": false, "language": "en_En"},
+"6": {"id": 398782774280192018, "channel":828886317823033384 , "muted": false, "language": "en_En"},
+"7": {"id": 410728436789673994, "channel":824698835435388969 , "muted": false, "language": "en_En"},
+"8": {"id": 422719049768894464, "channel":429375224962744330 , "muted": false, "language": "en_En"},
+"9": {"id": 433047429936316427, "channel":825408352053624843 , "muted": false, "language": "en_En"},
+"10": {"id": 438765748140244992, "channel":824764259900325900 , "muted": false, "language": "en_En"},
+"11": {"id": 493341314822307842, "channel":688953413819695114 , "muted": false, "language": "en_En"},
+"12": {"id": 519176372921303061, "channel":595836896819675146 , "muted": false, "language": "en_En"},
+"13": {"id": 524607162656227338, "channel":524607162656227340 , "muted": false, "language": "en_En"},
+"14": {"id": 533945109637496843, "channel":534499847370440716 , "muted": false, "language": "en_En"},
+"15": {"id": 627530515532218379, "channel":827255403699241000 , "muted": false, "language": "en_En"},
+"16": {"id": 706894263807377558, "channel":823781689355534367 , "muted": false, "language": "en_En"},
+"17": {"id": 718666408715878412, "channel":718668603028930570 , "muted": false, "language": "en_En"},
+"18": {"id": 747957379399680139, "channel":829796718123155506 , "muted": false, "language": "en_En"},
+"19": {"id": 799648077040058409, "channel":824284974374584380 , "muted": false, "language": "en_En"},
+"20": {"id": 822668695230218270, "channel":822668695230218274 , "muted": false, "language": "en_En"},
+"21": {"id": 822671692496633866, "channel":822671692496633869 , "muted": false, "language": "en_En"},
+}}
+

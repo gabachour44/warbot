@@ -4,13 +4,13 @@ import os
 from datetime import datetime
 from tinydb import TinyDB, Query
 import MultiLangSupport as MLS
-import logging
-logging.basicConfig(filename='myprog.log', level=logging.DEBUG)
+from decouple import config
+#import logging
+#logging.basicConfig(filename='myprog.log', level=logging.DEBUG)
 
 
-logging.info('So should this')
-
-print("test")
+#logging.info('So should this')
+dev = True
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
@@ -21,7 +21,10 @@ ringlist = []
 pcwlist = []
 needringlist = []
 
-db = TinyDB('db.json')
+if dev:
+    db = TinyDB('db-dev.json')
+else:
+    db = TinyDB('db.json')
 guild_table = db.table('guild_table')
 pcw_table = db.table('pcw_table')
 avi_table = db.table('avi_table')
@@ -36,10 +39,12 @@ whitelist = ['ts', 'ctf', 'ts/ctf','ts/ctf/bomb', 'any', 'all', 'bomb', 'ftl', '
 async def command_pcw(message):
     guildList = guild_table.all()
     args = message.content.split( botPrefix + 'pcw' )[1]
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
 
     #Check if there is a description
     if not args:
-        await message.channel.send( MLS.msgLangMap( 'cmdPcw_noArgs' ) + f" ``{ botPrefix }pcw 5 ts mid`` " )
+        await message.channel.send( MLS.msgLangMap( 'cmdPcw_noArgs', lang ) + f" ``{ botPrefix }pcw 5 ts mid`` " )
         return
     if args[0] != " ":
         return
@@ -51,16 +56,16 @@ async def command_pcw(message):
             if not (arg.lower() in whitelist):
                 int(arg)
     except:
-        await message.channel.send( MLS.msgLangMap( 'cmdPcw_noWhiteListPass' ) + f" ``{ botPrefix }pcw 5 ts mid`` " )
+        await message.channel.send( MLS.msgLangMap( 'cmdPcw_noWhiteListPass', lang ) + f" ``{ botPrefix }pcw 5 ts mid`` " )
         return
 
     #Anti-spam
     for pcw in pcwlist:
         timeelapsed = message.created_at - pcw[1]
         if pcw[0] == message.author.id and  timeelapsed.seconds < 600:
-            await message.channel.send( MLS.msgLangMap( 'cmdPcw_spamRateLimit_0' ) + 
+            await message.channel.send( MLS.msgLangMap( 'cmdPcw_spamRateLimit_0', lang ) + 
             f" **{10 - 1 - timeelapsed.seconds // 60}min {60 - timeelapsed.seconds % 60}s** " +
-            MLS.msgLangMap( 'cmdPcw_spamRateLimit_1' ) + f" ``{ botPrefix }pcw`` " + MLS.msgLangMap( 'cmdPcw_spamRateLimit_2' ) )
+            MLS.msgLangMap( 'cmdPcw_spamRateLimit_1', lang ) + f" ``{ botPrefix }pcw`` " + MLS.msgLangMap( 'cmdPcw_spamRateLimit_2', lang ) )
             return
 
     #Broadcast
@@ -87,11 +92,15 @@ async def command_pcw(message):
     pcwlist.append([message.author.id, message.created_at, message.content.split( botPrefix + 'pcw' )[1]])
     await message.add_reaction(u"\U0001F44C")
 
+    print(pcwlist)
+
 
 #Broadcast ring availability
 async def command_ring(message):
     guildList = guild_table.all()
     args = message.content.split( botPrefix + 'avi' )[1]
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
     if args:
         if args[0] != " ":
             return 
@@ -101,9 +110,9 @@ async def command_ring(message):
         timeelapsed = message.created_at - ring[1]
         print(timeelapsed)
         if ring[0] == message.author.id and  timeelapsed.seconds < 600:
-            await message.channel.send( MLS.msgLangMap( 'cmdRing_spamRateLimit_0' ) + 
+            await message.channel.send( MLS.msgLangMap( 'cmdRing_spamRateLimit_0', lang ) + 
             f" **{10 - 1 - timeelapsed.seconds // 60}min {60 - timeelapsed.seconds % 60}s** " +
-            MLS.msgLangMap( 'cmdRing_spamRateLimit_1' ) + f" ``{ botPrefix }ring`` " + MLS.msgLangMap( 'cmdRing_spamRateLimit_2' ) )
+            MLS.msgLangMap( 'cmdRing_spamRateLimit_1', lang ) + f" ``{ botPrefix }ring`` " + MLS.msgLangMap( 'cmdRing_spamRateLimit_2', lang ) )
             return
 
     #Broadcast
@@ -135,6 +144,8 @@ async def command_ring(message):
 async def command_needring(message):
     guildList = guild_table.all()
     args = message.content.split( botPrefix + 'ring' )[1]
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
     if args:
         if args[0] != " ":
             return 
@@ -145,16 +156,16 @@ async def command_needring(message):
         if numberneeded <1 or numberneeded > 10:
             raise Exception
     except:
-        await message.channel.send( MLS.msgLangMap( 'cmdNeedRing_noRingersNumSpecified' ) + f" ``{ botPrefix }ring 1``" )
+        await message.channel.send( MLS.msgLangMap( 'cmdNeedRing_noRingersNumSpecified', lang ) + f" ``{ botPrefix }ring 1``" )
         return
 
     #Anti-spam
     for needring in needringlist:
         timeelapsed = message.created_at - needring[1]
         if needring[0] == message.author.id and  timeelapsed.seconds < 600:
-            await message.channel.send( MLS.msgLangMap( 'cmdNeedRing_spamRateLimit_0' ) +
+            await message.channel.send( MLS.msgLangMap( 'cmdNeedRing_spamRateLimit_0', lang ) +
             f" **{10 - 1 - timeelapsed.seconds // 60}min {60 - timeelapsed.seconds % 60}s** " +
-            MLS.msgLangMap( 'cmdNeedRing_spamRateLimit_1' ) + f" ``{ botPrefix }ring`` " + MLS.msgLangMap( 'cmdNeedRing_spamRateLimit_2' ) )
+            MLS.msgLangMap( 'cmdNeedRing_spamRateLimit_1', lang ) + f" ``{ botPrefix }ring`` " + MLS.msgLangMap( 'cmdNeedRing_spamRateLimit_2', lang ) )
             return
 
     #Broadcast
@@ -190,16 +201,22 @@ async def command_needring(message):
 
 #Print the list of pcw requests of the last 60min
 async def command_pcwlist(message):
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
     pcwlistmessage = ""
     needringlistmessage = ""
     ringlistmessage = ""
 
+    print(pcwlist)
+    print(ringlist)
+    print(needringlist)
+
     if(len(pcwlist) > 0):
-        pcwlistmessage = MLS.msgLangMap( 'cmdPcwList_pcwlistmessage_0' ) + " \n"
+        pcwlistmessage = MLS.msgLangMap( 'cmdPcwList_pcwlistmessage_0', lang ) + " \n"
         index_to_remove = []
         for i in range(len(pcwlist)):
             #Remove requests older than 60min
-            timepassed = datetime.now() - pcwlist[i][1]
+            timepassed = message.created_at - pcwlist[i][1]
             if timepassed.seconds // 60 > 60:
                 index_to_remove.append(i)
         
@@ -212,14 +229,14 @@ async def command_pcwlist(message):
                 user = f"<@{pcwlist[i][0]}>"
             else:
                 user = f"``{client.get_user(pcwlist[i][0]).name}#{client.get_user(pcwlist[i][0]).discriminator}``"
-            pcwlistmessage += u"\U0001F4A5 " + f"**PCW**{pcwlist[i][2]} " + MLS.msgLangMap( 'cmdPcwList_pcwlistmessage_1' ) + f" {user} ({timepassed.seconds // 60} min) \n"
+            pcwlistmessage += u"\U0001F4A5 " + f"**PCW**{pcwlist[i][2]} " + MLS.msgLangMap( 'cmdPcwList_pcwlistmessage_1', lang ) + f" {user} ({timepassed.seconds // 60} min) \n"
 
     if(len(needringlist) > 0):
-        needringlistmessage = "\n" + MLS.msgLangMap( 'cmdPcwList_needringlistmessage_0' ) + " \n"
+        needringlistmessage = "\n" + MLS.msgLangMap( 'cmdPcwList_needringlistmessage_0', lang ) + " \n"
         index_to_remove = []
         for i in range(len(needringlist)):
             #Remove requests older than 60min
-            timepassed = datetime.now() - needringlist[i][1]
+            timepassed = message.created_at - needringlist[i][1]
             if timepassed.seconds // 60 > 60:
                 index_to_remove.append(i)
         
@@ -236,14 +253,14 @@ async def command_pcwlist(message):
                 ringstring = f"**{needringlist[i][2]} Ringers **"
             else:
                 ringstring = f"**{needringlist[i][2]} Ringer **"
-            needringlistmessage += u"\U0000203C " + ringstring + MLS.msgLangMap( 'cmdPcwList_needringlistmessage_1' ) + f" {user} ({timepassed.seconds // 60} min) \n"
+            needringlistmessage += u"\U0000203C " + ringstring + MLS.msgLangMap( 'cmdPcwList_needringlistmessage_1', lang ) + f" {user} ({timepassed.seconds // 60} min) \n"
 
     if(len(ringlist) > 0):
-        ringlistmessage = "\n" + MLS.msgLangMap( 'cmdPcwList_ringlistmessage' ) + " \n"
+        ringlistmessage = "\n" + MLS.msgLangMap( 'cmdPcwList_ringlistmessage', lang ) + " \n"
         index_to_remove = []
         for i in range(len(ringlist)):
             #Remove requests older than 60min
-            timepassed = datetime.now() - ringlist[i][1]
+            timepassed = message.created_at - ringlist[i][1]
             if timepassed.seconds // 60 > 60:
                 index_to_remove.append(i)
         
@@ -251,7 +268,7 @@ async def command_pcwlist(message):
             del ringlist[index]
 
         for i in range(len(ringlist)):
-            #Setup message
+            #Setup messagemessage.created_at
             if message.guild.get_member(ringlist[i][0]) != None:
                 user = f"<@{ringlist[i][0]}>"
             else:
@@ -259,7 +276,7 @@ async def command_pcwlist(message):
             ringlistmessage += u"\U0001F52B  " + f"{user} ({timepassed.seconds // 60} min) \n"
 
     if (len(pcwlist) == 0 and len(ringlist) == 0 and len(needringlist) == 0):
-        await message.channel.send( MLS.msgLangMap( 'cmdPcwList_empty' ) )
+        await message.channel.send( MLS.msgLangMap( 'cmdPcwList_empty', lang ) )
         return
     await message.channel.send(pcwlistmessage + needringlistmessage + ringlistmessage, allowed_mentions=discord.AllowedMentions(users=False))
 
@@ -268,8 +285,9 @@ async def command_pcwlist(message):
 
 #Activate the bot on a channel
 async def command_activate(message):
+    lang = "en_En"
     if not message.author.guild_permissions.manage_guild:
-        await message.channel.send( MLS.msgLangMap( 'cmdActivate_noPerm' ) ) 
+        await message.channel.send( MLS.msgLangMap( 'cmdActivate_noPerm', lang ) ) 
         return
 
     if guild_table.search(Query().id == message.guild.id):
@@ -278,50 +296,74 @@ async def command_activate(message):
         guild_table.insert({'id' : message.guild.id, 'channel': message.channel.id, 'muted': False, 'language': 'en_En' })
 
     await message.channel.send( 
-    MLS.msgLangMap( 'cmdActivate_welcome_0' ) + " " + u"\U0001F44B" + 
-    MLS.msgLangMap( 'cmdActivate_welcome_1' ) + f" {len(client.guilds)} " +
-    MLS.msgLangMap( 'cmdActivate_welcome_2' ) +
-    f" ``{ botPrefix }pcw``, ``{ botPrefix }avi`` " + MLS.msgLangMap( 'cmdActivate_welcome_3' ) + f" ``{ botPrefix }ring`` " +
-    MLS.msgLangMap( 'cmdActivate_welcome_4' ) + f" ``{ botPrefix }warbot help`` " + MLS.msgLangMap( 'cmdActivate_welcome_5' ) )
+    MLS.msgLangMap( 'cmdActivate_welcome_0', lang ) + " " + u"\U0001F44B" + 
+    MLS.msgLangMap( 'cmdActivate_welcome_1', lang ) + f" {len(client.guilds)} " +
+    MLS.msgLangMap( 'cmdActivate_welcome_2', lang ) +
+    f" ``{ botPrefix }pcw``, ``{ botPrefix }avi`` " + MLS.msgLangMap( 'cmdActivate_welcome_3', lang ) + f" ``{ botPrefix }ring`` " +
+    MLS.msgLangMap( 'cmdActivate_welcome_4', lang ) + f" ``{ botPrefix }warbot help`` " + MLS.msgLangMap( 'cmdActivate_welcome_5', lang ) )
     await message.add_reaction(u"\U0001F44C")
 
 #Mute the bot on a channel
 async def command_mute(message):
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
     if not message.author.guild_permissions.manage_guild:
-        await message.channel.send( MLS.msgLangMap( 'cmdMute_noPerm' ) ) 
+        await message.channel.send( MLS.msgLangMap( 'cmdMute_noPerm', lang ) ) 
         return
         
     if guild_table.search(Query().id == message.guild.id):
         guild_table.update({'muted': True}, Query().id == message.guild.id)
-        await message.channel.send( MLS.msgLangMap( 'cmdMute_muted' ) )
+        await message.channel.send( MLS.msgLangMap( 'cmdMute_muted', lang ) )
         await message.add_reaction(u"\U0001F44C")
 
 #Unmute the bot on a channel
 async def command_unmute(message):
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
     if not message.author.guild_permissions.manage_guild:
-        await message.channel.send( MLS.msgLangMap( 'cmdUnmute_noPerm' ) ) 
+        await message.channel.send( MLS.msgLangMap( 'cmdUnmute_noPerm', lang ) ) 
         return
         
     if guild_table.search(Query().id == message.guild.id):
         guild_table.update({'muted': False}, Query().id == message.guild.id)
-        await message.channel.send( MLS.msgLangMap( 'cmdUnmute_unmuted' ) )
+        await message.channel.send( MLS.msgLangMap( 'cmdUnmute_unmuted', lang ) )
         await message.add_reaction(u"\U0001F44C")
 
 async def command_help(message):
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
+    print(lang)
     await message.channel.send(
-    MLS.msgLangMap( 'cmdHelp_helpInfo_0' ) +
-    f"\n\n``{ botPrefix }pcw`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_pcw' ) +
-    f"\n``{ botPrefix }avi`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_avi' ) +
-    f"\n``{ botPrefix }ring`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_ring' ) +
-    f"\n``{ botPrefix }warbot list`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_list' ) +
-    f"\n``{ botPrefix }warbot on`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_on' ) +
-    f"\n``{ botPrefix }warbot mute/unmute`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_muteUnmute' ) +
-    f"\n``{ botPrefix }warbot about`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_about' ) )
+    MLS.msgLangMap( 'cmdHelp_helpInfo_0', lang ) +
+    f"\n\n``{ botPrefix }pcw`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_pcw', lang ) +
+    f"\n``{ botPrefix }avi`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_avi', lang ) +
+    f"\n``{ botPrefix }ring`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_ring', lang ) +
+    f"\n``{ botPrefix }warbot list`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_list', lang ) +
+    f"\n``{ botPrefix }warbot on`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_on', lang ) +
+    f"\n``{ botPrefix }warbot mute/unmute`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_muteUnmute', lang ) +
+    f"\n``{ botPrefix }warbot about`` " + MLS.msgLangMap( 'cmdHelp_helpInfo_about', lang ) )
 
 async def command_about(message):
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
     await message.channel.send( 
-    MLS.msgLangMap( 'cmdAbout_aboutInfo_0' ) + "<https://bit.ly/3f9moVS> \n" + 
-    MLS.msgLangMap( 'cmdAbout_aboutInfo_1' ) + "``Holycrap#1833``" )
+    MLS.msgLangMap( 'cmdAbout_aboutInfo_0', lang ) + "<https://bit.ly/3f9moVS> \n" + 
+    MLS.msgLangMap( 'cmdAbout_aboutInfo_1', lang ) + "``Holycrap#1833``" )
+
+
+async def command_setlanguage(message):
+    serverSettings = guild_table.search(Query().id == message.guild.id)[0]
+    lang = serverSettings['language']
+    args = message.content.split( botPrefix + 'warbot language' )[1].strip()
+    if not message.author.guild_permissions.manage_guild:
+        await message.channel.send( MLS.msgLangMap( 'cmdActivate_noPerm', lang ) ) 
+        return
+
+    if args == "en_EN" or args == "pl_PL":
+        guild_table.update({'language': args}, Query().id == message.guild.id)
+        await message.add_reaction(u"\U0001F44C")
+    else:
+        await message.channel.send("Unknown language.")
     
 
 @client.event
@@ -387,6 +429,13 @@ async def on_message(message):
         await command_needring(message)
         return
 
+    if message.content.startswith( botPrefix + 'warbot language'):
+        await command_setlanguage(message)
+        return
+
 
 #keep_alive()
-client.run("""TOKEN HERE""")
+if dev:
+    client.run(config('TOKEN-DEV'))
+else:
+    client.run(config('TOKEN'))
